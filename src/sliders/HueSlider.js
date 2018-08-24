@@ -5,7 +5,7 @@ import GradientSlider from './GradientSlider';
 import HueGradient from '../gradients/HueGradient';
 import tinycolor from 'tinycolor2';
 
-const HueSlider = ({ style, value, onValueChange, gradientSteps }) => {
+const HueSlider = ({ style, value, onValueChange, gradientSteps, onSlidingComplete }) => {
   return (
     <GradientSlider
       gradient={<HueGradient gradientSteps={gradientSteps} />}
@@ -15,6 +15,7 @@ const HueSlider = ({ style, value, onValueChange, gradientSteps }) => {
       value={value}
       thumbTintColor={tinycolor({ s: 1, l: 0.5, h: value }).toHslString()}
       onValueChange={onValueChange}
+      onSlidingComplete={onSlidingComplete}
     />
   );
 };
@@ -24,5 +25,6 @@ export default HueSlider;
 HueSlider.propTypes = {
   value: PropTypes.number.isRequired,
   onValueChange: PropTypes.func.isRequired,
+  onSlidingComplete: PropTypes.func.isRequired,
   gradientSteps: PropTypes.number.isRequired
 };
