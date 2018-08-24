@@ -63,5 +63,6 @@ GradientSlider.propTypes = {
   step: PropTypes.number.isRequired,
   maximumValue: PropTypes.number.isRequired,
   onValueChange: PropTypes.func.isRequired,
+  onSlidingComplete: PropTypes.func.isRequired,
   thumbTintColor: PropTypes.string.isRequired
 };
