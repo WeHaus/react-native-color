@@ -1,11 +1,16 @@
-import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import PropTypes from 'prop-types';
-import GradientSlider from './GradientSlider';
-import HueGradient from '../gradients/HueGradient';
-import tinycolor from 'tinycolor2';
+import PropTypes from "prop-types";
+import React from "react";
+import tinycolor from "tinycolor2";
+import HueGradient from "../gradients/HueGradient";
+import GradientSlider from "./GradientSlider";
 
-const HueSlider = ({ style, value, onValueChange, gradientSteps, onSlidingComplete }) => {
+const HueSlider = ({
+  style,
+  value,
+  onValueChange,
+  gradientSteps,
+  onSlidingComplete
+}) => {
   return (
     <GradientSlider
       gradient={<HueGradient gradientSteps={gradientSteps} />}

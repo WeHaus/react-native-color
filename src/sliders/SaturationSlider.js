@@ -1,16 +1,16 @@
-import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import PropTypes from 'prop-types';
-import GradientSlider from './GradientSlider';
-import SaturationGradient from '../gradients/SaturationGradient';
-import tinycolor from 'tinycolor2';
+import PropTypes from "prop-types";
+import React from "react";
+import tinycolor from "tinycolor2";
+import SaturationGradient from "../gradients/SaturationGradient";
+import GradientSlider from "./GradientSlider";
 
 const SaturationSlider = ({
   style,
   value,
   color,
   onValueChange,
-  gradientSteps
+  gradientSteps,
+  onSlidingComplete
 }) => {
   return (
     <GradientSlider
@@ -23,6 +23,7 @@ const SaturationSlider = ({
       value={value}
       thumbTintColor={tinycolor({ ...color, s: value }).toHslString()}
       onValueChange={onValueChange}
+      onSlidingComplete={onSlidingComplete}
     />
   );
 };
@@ -37,5 +38,6 @@ SaturationSlider.propTypes = {
     l: PropTypes.number.isRequired
   }).isRequired,
   onValueChange: PropTypes.func.isRequired,
+  onSlidingComplete: PropTypes.func.isRequired,
   gradientSteps: PropTypes.number.isRequired
 };

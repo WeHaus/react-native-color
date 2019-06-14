@@ -1,16 +1,16 @@
-import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import PropTypes from 'prop-types';
-import GradientSlider from './GradientSlider';
-import LightnessGradient from '../gradients/LightnessGradient';
-import tinycolor from 'tinycolor2';
+import PropTypes from "prop-types";
+import React from "react";
+import tinycolor from "tinycolor2";
+import LightnessGradient from "../gradients/LightnessGradient";
+import GradientSlider from "./GradientSlider";
 
 const LightnessSlider = ({
   style,
   value,
   color,
   onValueChange,
-  gradientSteps
+  gradientSteps,
+  onSlidingComplete
 }) => {
   return (
     <GradientSlider
@@ -23,6 +23,7 @@ const LightnessSlider = ({
       value={value}
       thumbTintColor={tinycolor({ ...color, l: value }).toHslString()}
       onValueChange={onValueChange}
+      onSlidingComplete={onSlidingComplete}
     />
   );
 };
@@ -37,5 +38,6 @@ LightnessSlider.propTypes = {
     l: PropTypes.number.isRequired
   }).isRequired,
   onValueChange: PropTypes.func.isRequired,
+  onSlidingComplete: PropTypes.func.isRequired,
   gradientSteps: PropTypes.number.isRequired
 };
