@@ -37,7 +37,7 @@ LightnessSlider.propTypes = {
     s: PropTypes.number.isRequired,
     l: PropTypes.number.isRequired
   }).isRequired,
-  onValueChange: PropTypes.func.isRequired,
-  onSlidingComplete: PropTypes.func.isRequired,
+  onValueChange: PropTypes.func,
+  onSlidingComplete: PropTypes.func,
   gradientSteps: PropTypes.number.isRequired
 };

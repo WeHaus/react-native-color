@@ -29,7 +29,7 @@ export default HueSlider;
 
 HueSlider.propTypes = {
   value: PropTypes.number.isRequired,
-  onValueChange: PropTypes.func.isRequired,
-  onSlidingComplete: PropTypes.func.isRequired,
+  onValueChange: PropTypes.func,
+  onSlidingComplete: PropTypes.func,
   gradientSteps: PropTypes.number.isRequired
 };
